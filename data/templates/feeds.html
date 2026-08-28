@@ -1,0 +1,15 @@
+<div>
+  {% for resource in resources %}
+  <feed>
+    <id></id>
+    <updated>{{ resource.fields.publication_date }}</updated>
+    <title type="html">{{ resource.title }}</title>
+    <description>{{ resource.fields.description }}</description>
+    <author>
+      <email>info@streamx.com</email>
+      <name>{{ resource.fields.author }}</name>
+    </author>
+    <link href="{{ resource.fields.url }}" rel="self"/>
+  </feed>
+  {% endfor %}
+</div>

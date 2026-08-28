@@ -1,0 +1,8 @@
+{
+  "rendererKey": "templates/feeds.html",
+  "dataKeyMatchPattern": "latest-articles-rss",
+  "dataTypeMatchPattern": null,
+  "outputKeyTemplate": "/latestArticlesRss.xml",
+  "outputTypeTemplate": "data/json",
+  "outputFormat": "PAGE"
+}

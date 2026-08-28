@@ -1,0 +1,10 @@
+{
+  "specversion": "1.0",
+  "id": "${uuid}",
+  "source": "streamx-cli",
+  "type": "com.streamx.blueprints.renderer.published.v1",
+  "datacontenttype": "application/json",
+  "subject": "${relativePath:1}",
+  "time": "${currentTime}",
+  "data": { "template": "file://${payloadPath}" }
+}

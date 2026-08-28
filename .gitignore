@@ -1,0 +1,15 @@
+### IntelliJ IDEA ###
+.idea/*
+*.iws
+*.iml
+*.ipr
+
+### Mac OS ###
+.DS_Store
+
+# Ignore auth scripts
+/mesh/secrets/generated/
+/target
+/repository
+*/repository
+
