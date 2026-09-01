@@ -17,7 +17,7 @@ descriptors:
     type: processing
     containers:
       processor:
-        image: ghcr.io/streamx-com/streamx-blueprints/external-references-rewriter:3.0.23-native
+        image: ghcr.io/streamx-hub/streamx-blueprints/external-references-rewriter:3.0.27-native
         incoming:
           incoming-resources: {}
         outgoing:
@@ -31,7 +31,7 @@ descriptors:
         size: 5Gi
     containers:
       processor:
-        image: ghcr.io/streamx-com/streamx-blueprints/resource-downloader:3.0.23-native
+        image: ghcr.io/streamx-hub/streamx-blueprints/resource-downloader:3.0.27-native
         incoming:
           download-requests: {}
         outgoing:
@@ -45,7 +45,7 @@ descriptors:
     type: processing
     containers:
       processor:
-        image: ghcr.io/streamx-com/streamx-blueprints/indexable-resources-producer:3.0.23-native
+        image: ghcr.io/streamx-hub/streamx-blueprints/indexable-resources-producer:3.0.27-native
         incoming:
           pages: {}
           fragments: {}
@@ -60,7 +60,7 @@ descriptors:
         size: 5Gi
     containers:
       processor:
-        image: ghcr.io/streamx-com/streamx-blueprints/indexable-resources-sql-transformer:3.0.23-native
+        image: ghcr.io/streamx-hub/streamx-blueprints/indexable-resources-sql-transformer:3.0.27-native
         incoming:
           indexable-resources: { }
         outgoing:
@@ -81,7 +81,7 @@ descriptors:
         size: 5Gi
     containers:
       processor:
-        image: ghcr.io/streamx-com/streamx-blueprints/rendering-engine:3.0.23-native
+        image: ghcr.io/streamx-hub/streamx-blueprints/rendering-engine:3.0.27-native
         incoming:
           data: { }
           renderers: { }
@@ -116,7 +116,7 @@ descriptors:
         persistent: true
     containers:
       sink:
-        image: ghcr.io/streamx-com/streamx-blueprints/opensearch-sink:3.0.23-native
+        image: ghcr.io/streamx-hub/streamx-blueprints/opensearch-sink:3.0.27-native
         incoming:
           indexable-resources:
             initState: delta
@@ -149,7 +149,7 @@ descriptors:
         persistent: true
     containers:
       sink:
-        image: ghcr.io/streamx-com/streamx-blueprints/web-server-sink:3.0.23-native
+        image: ghcr.io/streamx-hub/streamx-blueprints/web-server-sink:3.0.27-native
         incoming:
           resources:
             initState: delta
