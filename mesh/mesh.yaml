@@ -139,7 +139,7 @@ descriptors:
           network.host: 0.0.0.0
           http.port: "9201"
           discovery.type: single-node
-          DISABLE_SECURITY_PLUGIN: "true"
+          plugins.security.ssl.http.enabled: "false"
 
   web-server-sink:
     type: edge
