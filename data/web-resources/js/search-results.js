@@ -13,6 +13,7 @@ const searchPage = createResultsPanel(
         method: "POST",
         requestId: "eds-pages",
         pageSize: 20,
+        facetFields: ["category"],
         renderers,
     },
 );
