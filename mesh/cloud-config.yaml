@@ -1,19 +1,13 @@
+---
+domains: []
 global:
-  services:
-    processing:
-      indexable-resources-sql-transformer:
-        stateful: true
-      rendering-engine:
-        stateful: true
-    edge:
-      opensearch-sink:
-        stateful: true
-        replicas: 2
-      web-server-sink:
-        stateful: true
-        replicas: 2
+  properties: {}
 clusters:
+  eu-central-waw-edge:
+    enabled: true
+    overlays:
+      properties: {}
   eu-west-par-processing:
     enabled: true
-  eu-south-mil-edge:
-    enabled: true
+    overlays:
+      properties: {}
