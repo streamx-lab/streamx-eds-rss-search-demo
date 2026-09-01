@@ -3,6 +3,6 @@
   "dataKeyMatchPattern": "latest-articles-rss",
   "dataTypeMatchPattern": null,
   "outputKeyTemplate": "/latestArticlesRss.xml",
-  "outputTypeTemplate": "data/json",
+  "outputTypeTemplate": "data/xml",
   "outputFormat": "PAGE"
 }
