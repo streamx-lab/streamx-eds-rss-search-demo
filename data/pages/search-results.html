@@ -3,21 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home | Static AEM-style site</title>
+  <title>Search results | Static AEM-style site</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@streamx-hub/search@1.0.0/dist/streamx-search.css">
   <link rel="stylesheet" href="web-resources/css/styles.css">
-  <meta property="author" content="David Beckham">
-  <meta property="description" content="David was a great footballer">
-  <meta property="publication_date" content="2025-07-01">
-  <meta property="modification_date" content="2025-07-02">
-  <meta property="url" content="https://www.streamx.com/">
 </head>
 <body>
 <header>
   <div class="header-inner">
     <a class="logo" href="index.html">AEM<span>·</span>EDS</a>
     <button class="menu-button" aria-label="Toggle navigation">Menu</button>
-    <nav aria-label="Main navigation"><a href="index.html" class="nav-link active">Home</a>
+    <nav aria-label="Main navigation"><a href="index.html" class="nav-link">Home</a>
       <a href="about.html" class="nav-link">About</a>
       <a href="features.html" class="nav-link">Features</a>
       <a href="blocks.html" class="nav-link">Blocks</a>
@@ -44,33 +39,8 @@
 
   <section class="section">
     <div class="container">
-      <h2>Boilerplate highlights</h2>
-      <div class="grid">
-        <article class="card">
-          <div class="number">01</div>
-          <h3>Unmatched speed</h3>
-          <p>Static assets and a focused layout make the experience quick and predictable.</p>
-        </article>
-        <article class="card">
-          <div class="number">02</div>
-          <h3>Content at scale</h3>
-          <p>Use the same visual system across multiple pages without duplicating CSS.</p></article>
-        <article class="card">
-          <div class="number">03</div>
-          <h3>Low-code simplicity</h3>
-          <p>Everything is plain HTML, CSS and JavaScript, so it can be edited anywhere.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      <div class="columns">
-        <div><h2>Designed for static delivery</h2></div>
-        <div><p class="lead">The structure follows the clean editorial feel of the referenced AEM
-          EDS boilerplate: generous whitespace, restrained typography, borders, cards and strong
-          content hierarchy.</p></div>
-      </div>
+      <h2>Search results</h2>
+      <div id="search-results-list"></div>
     </div>
   </section>
 
@@ -82,10 +52,12 @@
 <script type="importmap">
   {
     "imports": {
-      "@streamx-hub/search/search-inline": "https://cdn.jsdelivr.net/npm/@streamx-hub/search@1.0.0/dist/streamx-search-inline.js"
+      "@streamx-hub/search/search-inline": "https://cdn.jsdelivr.net/npm/@streamx-hub/search@1.0.0/dist/streamx-search-inline.js",
+      "@streamx-hub/search/search-results-panel": "https://cdn.jsdelivr.net/npm/@streamx-hub/search@1.0.0/dist/streamx-search-results-panel.js"
     }
   }
 </script>
 <script type="module" src="web-resources/js/main.js"></script>
+<script type="module" src="web-resources/js/search-results.js"></script>
 </body>
 </html>
