@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blocks | Static AEM-style site</title>
   <link rel="stylesheet" href="web-resources/css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@streamx-hub/search@1.0.1/dist/streamx-search.css">
   <meta property="author" content="Michał Wiśniewski">
   <meta property="description" content="David was a great footballer">
-  <meta property="publication_date" content="2025-07-07">
+  <meta property="date" content="2025-07-07">
   <meta property="modification_date" content="2025-07-08">
   <meta property="url" content="https://www.streamx.com/">
+  <meta property="facets:category" content="AEM">
 </head>
 <body>
 <header>
@@ -87,5 +89,14 @@
 <footer>
   <div class="container">Static HTML demo · 10 pages · Works locally without a server</div>
 </footer>
+
+<script type="importmap">
+  {
+    "imports": {
+      "@streamx-hub/search/search-inline": "https://cdn.jsdelivr.net/npm/@streamx-hub/search@1.0.1/dist/streamx-search-inline.js"
+    }
+  }
+</script>
+<script type="module" src="web-resources/js/main.js"></script>
 </body>
 </html>
