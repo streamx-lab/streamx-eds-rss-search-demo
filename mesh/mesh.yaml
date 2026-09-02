@@ -325,9 +325,9 @@ processing:
             ref: relay.indexable-resources
           indexable-resource-fragments:
             ref: outbox.indexable-resource-fragments
-        environmentFrom:
+        volumesFrom:
           configs:
-            - indexable-resources-producer.properties
+            - "indexable-resources-producer.yaml"
 
   indexable-resources-sql-transformer:
     descriptor: indexable-resources-sql-transformer
@@ -339,9 +339,9 @@ processing:
         outgoing:
           transformations:
             ref: relay.data
-        environmentFrom:
+        volumesFrom:
           configs:
-            - indexable-resources-sql-transformer.properties
+            - "indexable-resources-sql-transformer.yaml"
 
   rendering-engine:
     descriptor: rendering-engine
