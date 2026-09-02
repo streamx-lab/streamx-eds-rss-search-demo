@@ -70,3 +70,5 @@ export const renderers = {
       `;
     },
 };
+
+export const BASE_SEARCH_URL =  "http://localhost:8082/search";
