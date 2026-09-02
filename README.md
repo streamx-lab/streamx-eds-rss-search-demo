@@ -11,7 +11,7 @@ Follow the steps below to set up and run the Mesh in a local environment.
 Install the StreamX CLI using Homebrew:
 
 ```bash
-brew install streamx-com/preview-tap/streamx
+brew install streamx-com/tap/streamx
 ```
 
 ## 2. Start StreamX
