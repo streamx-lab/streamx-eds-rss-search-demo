@@ -253,6 +253,17 @@ processing:
           relayed-events:
             ref: outbox.assets
 
+  indexable-resources-relay:
+    descriptor: relay
+    containers:
+      service:
+        incoming:
+          events:
+            ref: relay.indexable-resources
+        outgoing:
+          relayed-events:
+            ref: outbox..indexable-resources
+
   download-requests-relay:
     descriptor: relay
     containers:
@@ -371,7 +382,7 @@ edge:
       sink:
         incoming:
           indexable-resources:
-            ref: relay.indexable-resources
+            ref: outbox.indexable-resources
           indexable-resource-fragments:
             ref: outbox.indexable-resource-fragments
         volumesFrom:
