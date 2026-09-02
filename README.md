@@ -181,3 +181,80 @@ Value in `dataKeyMatchPattern` should match `latest-car-rss` transformation name
 Once everything is configured and published, sample feeds are available at:
 
 http://localhost:8084/latestCarRss.xml
+
+# Test Cases for RSS
+
+**RSS-01 – Basic RSS generation**
+
+1. Publish templates, contexts and pages.
+2. Open `/latestArticlesRss.xml`.
+3. Verify the RSS response.
+
+**Expected result:**
+RSS is generated successfully and contains articles.
+
+**RSS-02 – Change title in RSS template**
+
+1. Open the RSS template.
+2. Change the title mapping, for example:
+
+```
+<title type="html">TEST {{ resource.title }}</title>
+```
+
+3. Publish the template.
+4. Open `/latestArticlesRss.xml`.
+
+**Expected result:**
+The updated title is visible in the RSS feed.
+
+**RSS-03 – Change description in RSS template**
+
+1. Open the RSS template.
+2. Change the description mapping to e.g. `summary`.
+3. Publish the template.
+4. Open `/latestArticlesRss.xml`.
+
+**Expected result:**
+The updated description is visible in the RSS feed.
+
+**RSS-04 – Add a new field to the RSS template**
+
+1. Open the RSS template.
+2. Add a new field, for example:
+
+```
+<car>{{ resource.fields.car }}</car>
+```
+
+3. Publish the template.
+4. Add a new field to the page:
+
+```text
+  <meta property="car" content="Fiat">
+```
+5. Publish page
+6. Open `/latestArticlesRss.xml`.
+
+**Expected result:**
+The new `<car>` field is present in the generated RSS feed and contains the expected value.
+
+**RSS-05 – Change transformation**
+
+1. Open the `latest-articles-rss` transformation.
+2. Modify the SQL query.
+3. Publish the transformation.
+4. Open `/latestArticlesRss.xml`.
+
+**Expected result:**
+The RSS feed contains results according to the updated transformation.
+
+**RSS-06 – Change RSS context**
+
+1. Open the RSS context configuration.
+2. Change the `outputKeyTemplate`.
+3. Publish the context.
+4. Open the RSS endpoint.
+
+**Expected result:**
+The RSS feed uses the updated context configuration and is generated successfully.
