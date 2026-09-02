@@ -92,8 +92,8 @@ The following configuration values are required for the renderer:
 | `dataKeyMatchPattern` | Pattern used to match the data that should be passed to the renderer. Transformation name           |
 | `dataTypeMatchPattern` | Optional pattern used to match the data type. Set to `null` when no data type matching is required. |
 | `outputKeyTemplate` | Path where the generated output will be available.                                                  |
-| `outputTypeTemplate` | Type of the generated output.                                                                       |
-| `outputFormat` | Format of the generated output.                                                                     |
+| `outputTypeTemplate` | Type of the generated output. Leave as it is.                                                       |
+| `outputFormat` | Format of the generated output. Leave as it is.                                                     |
 
 Contexts are located in:
 
@@ -123,6 +123,61 @@ streamx publish events data/pages
 
 ## 7. Open the Sample Pages
 
-Once everything is configured and published, sample pages are available at:
+Once everything is configured and published, sample feeds are available at:
 
-http://edge.127.0.0.1.nip.io/index.html
+http://localhost:8084/latestArticlesRss.xml
+
+# How to add new FEED
+
+1. Add new configuration in indexable-resources-producer.properties
+
+```text
+streamx.blueprints.indexable-resources-producer.search-feed-extractor.xpath.fields.car.facet=false
+streamx.blueprints.indexable-resources-producer.search-feed-extractor.xpath.fields.car.element-selector=//*[local-name()='meta'][@property='car']
+streamx.blueprints.indexable-resources-producer.search-feed-extractor.xpath.fields.car.key=car
+streamx.blueprints.indexable-resources-producer.search-feed-extractor.xpath.fields.car.value-selector=./@content
+```
+
+2. Update Transformer configuration in indexable-resources-sql-transformer.properties
+
+```text
+streamx.blueprints.indexable-resources-sql-transformer.persisted-data.include-content=false
+streamx.blueprints.indexable-resources-sql-transformer.persisted-data.fields=url,author,description,publication_date,modification_date,car
+streamx.blueprints.indexable-resources-sql-transformer.persisted-data.facets=category
+streamx.blueprints.indexable-resources-sql-transformer.transformations.latest-car-rss.sql-query=SELECT r.* FROM indexable_resource r LEFT JOIN indexable_resource_fields f ON f.resource_subject = r.subject AND f.key = 'publication_date' ORDER BY f.value IS NULL, f.value DESC
+
+```
+3. Add new template under /data/templates and publish it.
+
+```text
+<div>
+  {% for resource in resources %}
+  <feed>
+    <id></id>
+    <updated>{{ resource.fields.publication_date }}</updated>
+    <title type="html">{{ resource.title }}</title>
+    <description>{{ resource.fields.description }}</description>
+    <car>{{ resource.fields.car }}</car>
+  </feed>
+  {% endfor %}
+</div>
+```
+4. Add new context under /data/contexts and publish it.
+
+Value in `dataKeyMatchPattern` should match `latest-car-rss` transformation name.
+
+```text
+{
+  "rendererKey": "templates/cars-feed.html",
+  "dataKeyMatchPattern": "latest-car-rss",
+  "dataTypeMatchPattern": null,
+  "outputKeyTemplate": "/latestCarRss.xml",
+  "outputTypeTemplate": "data/xml",
+  "outputFormat": "PAGE"
+}
+
+```
+
+Once everything is configured and published, sample feeds are available at:
+
+http://localhost:8084/latestCarRss.xml
