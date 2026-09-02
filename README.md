@@ -123,9 +123,14 @@ streamx publish events data/pages
 
 ## 7. Open the Sample Pages
 
-Once everything is configured and published, sample feeds are available at:
+Once everything is configured and published open:
 
-http://localhost:8084/latestArticlesRss.xml
+http://edge.127.0.0.1.nip.io
+
+to view the whole site. 
+
+Sample feeds are available at:
+http://edge.127.0.0.1.nip.io/latest-articles.xml
 
 # How to add new FEED
 
@@ -171,7 +176,7 @@ Value in `dataKeyMatchPattern` should match `latest-car-rss` transformation name
   "rendererKey": "templates/cars-feed.html",
   "dataKeyMatchPattern": "latest-car-rss",
   "dataTypeMatchPattern": null,
-  "outputKeyTemplate": "/latestCarRss.xml",
+  "outputKeyTemplate": "/latest-cars.xml",
   "outputTypeTemplate": "data/xml",
   "outputFormat": "PAGE"
 }
@@ -179,15 +184,14 @@ Value in `dataKeyMatchPattern` should match `latest-car-rss` transformation name
 ```
 
 Once everything is configured and published, sample feeds are available at:
-
-http://localhost:8084/latestCarRss.xml
+http://edge.127.0.0.1.nip.io/latest-cars.xml
 
 # Test Cases for RSS
 
 **RSS-01 – Basic RSS generation**
 
 1. Publish templates, contexts and pages.
-2. Open `/latestArticlesRss.xml`.
+2. Open `/latest-articles.xml`.
 3. Verify the RSS response.
 
 **Expected result:**
@@ -203,7 +207,7 @@ RSS is generated successfully and contains articles.
 ```
 
 3. Publish the template.
-4. Open `/latestArticlesRss.xml`.
+4. Open `/latest-articles.xml`.
 
 **Expected result:**
 The updated title is visible in the RSS feed.
@@ -213,7 +217,7 @@ The updated title is visible in the RSS feed.
 1. Open the RSS template.
 2. Change the description mapping to e.g. `summary`.
 3. Publish the template.
-4. Open `/latestArticlesRss.xml`.
+4. Open `/latest-articles.xml`.
 
 **Expected result:**
 The updated description is visible in the RSS feed.
@@ -234,7 +238,7 @@ The updated description is visible in the RSS feed.
   <meta property="car" content="Fiat">
 ```
 5. Publish page
-6. Open `/latestArticlesRss.xml`.
+6. Open `/latest-articles.xml`.
 
 **Expected result:**
 The new `<car>` field is present in the generated RSS feed and contains the expected value.
@@ -244,7 +248,7 @@ The new `<car>` field is present in the generated RSS feed and contains the expe
 1. Open the `latest-articles-rss` transformation.
 2. Modify the SQL query.
 3. Publish the transformation.
-4. Open `/latestArticlesRss.xml`.
+4. Open `/latest-articles.xml`.
 
 **Expected result:**
 The RSS feed contains results according to the updated transformation.

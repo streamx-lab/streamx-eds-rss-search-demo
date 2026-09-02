@@ -2,7 +2,7 @@
   "rendererKey": "templates/feeds.html",
   "dataKeyMatchPattern": "latest-articles-rss",
   "dataTypeMatchPattern": null,
-  "outputKeyTemplate": "/latestArticlesRss.xml",
+  "outputKeyTemplate": "/latest-articles.xml",
   "outputTypeTemplate": "data/xml",
   "outputFormat": "PAGE"
 }
