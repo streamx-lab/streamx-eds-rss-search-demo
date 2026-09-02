@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="nofollow, noindex">
+  <title>Search results with tabs | Static AEM-style site</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@streamx-hub/search@1.0.1/dist/streamx-search.css">
+  <link rel="stylesheet" href="web-resources/css/styles.css">
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html">Streamx<span>·</span>Demo</a>
+    <button class="menu-button" aria-label="Toggle navigation">Menu</button>
+    <nav aria-label="Main navigation"><a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="features.html" class="nav-link">Features</a>
+      <a href="blocks.html" class="nav-link">Blocks</a>
+      <a href="performance.html" class="nav-link">Performance</a>
+      <a href="accessibility.html" class="nav-link">Accessibility</a>
+      <a href="documentation.html" class="nav-link">Documentation</a>
+      <a href="resources.html" class="nav-link">Resources</a>
+      <a href="faq.html" class="nav-link">FAQ</a></nav>
+    <div class="search">
+      <input id="site-search" type="search" placeholder="Search pages…" aria-label="Search pages">
+      <div id="search-results" class="search-results"></div>
+    </div>
+  </div>
+</header>
+<main>
+
+  <section class="section">
+    <div class="container">
+      <h2>Search results</h2>
+      <div id="search-results-list"></div>
+    </div>
+  </section>
+
+</main>
+<footer>
+  <div class="container">Static HTML demo · 10 pages · Works locally without a server</div>
+</footer>
+
+<script type="importmap">
+  {
+    "imports": {
+      "@streamx-hub/search/search-inline": "https://cdn.jsdelivr.net/npm/@streamx-hub/search@1.0.1/dist/streamx-search-inline.js",
+      "@streamx-hub/search/search-tabs": "https://cdn.jsdelivr.net/npm/@streamx-hub/search@1.0.1/dist/streamx-search-tabs.js"
+    }
+  }
+</script>
+<script type="module" src="web-resources/js/main.js"></script>
+<script type="module" src="web-resources/js/search-results-with-tabs.js"></script>
+</body>
+</html>

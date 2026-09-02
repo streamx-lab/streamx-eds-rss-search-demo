@@ -1,0 +1,59 @@
+streamx:
+  blueprints:
+    indexable-resources-producer:
+      index-fragments: false
+
+      search-feed-extractor:
+        xpath:
+          fields:
+            no-index:
+              no-index: true
+              facet: false
+              element-selector: "//*[local-name()='meta'][@name='robots']"
+              key: robots
+              value: noindex
+
+            eds:
+              facet: true
+              element-selector: "//*[local-name()='meta'][starts-with(@property, 'facets:')]"
+              key-selector: "./@property"
+              value-selector: "./@content"
+              key-processors:
+                - name: trim
+                - name: lowercase
+                - name: removeStart
+                  config: "facets:"
+              value-processors:
+                - name: trim
+
+            field-description:
+              facet: false
+              element-selector: "//*[local-name()='meta'][@property='description']"
+              key: description
+              value-selector: "./@content"
+
+            date:
+              facet: false
+              element-selector: "//*[local-name()='meta'][@property='date']"
+              key: date
+              value-selector: "./@content"
+
+            publication-date:
+              facet: false
+              element-selector: "//*[local-name()='meta'][@property='publication_date']"
+              key: publication_date
+              value-selector: "./@content"
+
+            modification-date:
+              facet: false
+              element-selector: "//*[local-name()='meta'][@property='modification_date']"
+              key: modification_date
+              value-selector: "./@content"
+
+            author:
+              facet: false
+              element-selector: "//*[local-name()='meta'][@property='author']"
+              key: author
+              value-selector: "./@content"
+
+

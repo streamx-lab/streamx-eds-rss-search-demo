@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Performance | Static AEM-style site</title>
+  <link rel="stylesheet" href="web-resources/css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@streamx-hub/search@1.0.1/dist/streamx-search.css">
+  <meta property="author" content="Marta Szymańska">
+  <meta property="description" content="David was a great footballer">
+  <meta property="date" content="2025-07-02">
+  <meta property="modification_date" content="2025-07-03">
+  <meta property="url" content="https://www.streamx.com/">
+  <meta property="facets:category" content="AEM">
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html">Streamx<span>·</span>Demo</a>
+    <button class="menu-button" aria-label="Toggle navigation">Menu</button>
+    <nav aria-label="Main navigation"><a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="features.html" class="nav-link">Features</a>
+      <a href="blocks.html" class="nav-link">Blocks</a>
+      <a href="performance.html" class="nav-link active">Performance</a>
+      <a href="accessibility.html" class="nav-link">Accessibility</a>
+      <a href="documentation.html" class="nav-link">Documentation</a>
+      <a href="resources.html" class="nav-link">Resources</a>
+      <a href="faq.html" class="nav-link">FAQ</a></nav>
+    <div class="search">
+      <input id="site-search" type="search" placeholder="Search pages…" aria-label="Search pages">
+      <div id="search-results" class="search-results"></div>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">Performance</div>
+      <h1>Performance first</h1>
+      <p>Static HTML, a small CSS layer and minimal JavaScript make this site easy to open and
+        distribute.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div><h2>Performance first</h2></div>
+        <div><p class="lead">Static HTML, a small CSS layer and minimal JavaScript make this site
+          easy to open and distribute.</p>
+          <ul class="list">
+            <li>Responsive layout for desktop, tablet and mobile.</li>
+            <li>Shared navigation and client-side search.</li>
+            <li>No external dependencies required to run locally.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <h2>Key points</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="number">01</div>
+          <h3>Simple structure</h3>
+          <p>Semantic HTML keeps each page easy to understand and edit.</p></article>
+        <article class="card">
+          <div class="number">02</div>
+          <h3>Reusable styling</h3>
+          <p>All pages share one lightweight stylesheet and one small JavaScript file.</p></article>
+        <article class="card">
+          <div class="number">03</div>
+          <h3>Local first</h3>
+          <p>Open any HTML file directly from your filesystem — no build step or server
+            required.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="callout"><h2>Keep it simple.</h2>
+        <p>Because this is plain static HTML, you can copy the folder to a USB drive, upload it to
+          any static host, or open it directly from your computer.</p></div>
+    </div>
+  </section>
+
+</main>
+<footer>
+  <div class="container">Static HTML demo · 10 pages · Works locally without a server</div>
+</footer>
+
+<script type="importmap">
+  {
+    "imports": {
+      "@streamx-hub/search/search-inline": "https://cdn.jsdelivr.net/npm/@streamx-hub/search@1.0.1/dist/streamx-search-inline.js"
+    }
+  }
+</script>
+<script type="module" src="web-resources/js/main.js"></script>
+</body>
+</html>
