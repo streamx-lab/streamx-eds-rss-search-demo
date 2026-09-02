@@ -6,6 +6,13 @@ streamx:
       search-feed-extractor:
         xpath:
           fields:
+            no-index:
+              facet: false
+              no-index: true
+              element-selector: "//*[local-name()='meta'][@name='robots' and contains(concat(',', translate(@content, ' ', ''), ','), ',noindex,')]"
+              key: robots
+              value: noindex
+
             eds:
               facet: true
               element-selector: "//*[local-name()='meta'][starts-with(@property, 'facets:')]"
