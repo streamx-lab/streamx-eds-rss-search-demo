@@ -134,22 +134,27 @@ http://edge.127.0.0.1.nip.io/latest-articles.xml
 
 # How to add new FEED
 
-1. Add new configuration in indexable-resources-producer.properties
+1. Add new configuration in indexable-resources-producer.yaml
 
-```text
-streamx.blueprints.indexable-resources-producer.search-feed-extractor.xpath.fields.car.facet=false
-streamx.blueprints.indexable-resources-producer.search-feed-extractor.xpath.fields.car.element-selector=//*[local-name()='meta'][@property='car']
-streamx.blueprints.indexable-resources-producer.search-feed-extractor.xpath.fields.car.key=car
-streamx.blueprints.indexable-resources-producer.search-feed-extractor.xpath.fields.car.value-selector=./@content
+```yaml
+car:
+  facet: false
+  element-selector: "//*[local-name()='meta'][@property='car']"
+  key: car
+  value-selector: "./@content"
 ```
 
-2. Update Transformer configuration in indexable-resources-sql-transformer.properties
+2. Update Transformer configuration in indexable-resources-sql-transformer.yaml
 
-```text
-streamx.blueprints.indexable-resources-sql-transformer.persisted-data.include-content=false
-streamx.blueprints.indexable-resources-sql-transformer.persisted-data.fields=url,author,description,publication_date,modification_date,car
-streamx.blueprints.indexable-resources-sql-transformer.persisted-data.facets=category
-streamx.blueprints.indexable-resources-sql-transformer.transformations.latest-car-rss.sql-query=SELECT r.* FROM indexable_resource r LEFT JOIN indexable_resource_fields f ON f.resource_subject = r.subject AND f.key = 'publication_date' ORDER BY f.value IS NULL, f.value DESC
+```yaml
+indexable-resources-sql-transformer:
+  persisted-data:
+    include-content: false
+    fields: url,author,description,publication_date,modification_date,car
+    facets: category
+  transformations:
+    latest-car-rss:
+      sql-query: "SELECT r.* FROM indexable_resource r LEFT JOIN indexable_resource_fields f ON f.resource_subject = r.subject AND f.key = 'publication_date' ORDER BY f.value IS NULL, f.value DESC"
 
 ```
 3. Add new template under /data/templates and publish it.
