@@ -325,9 +325,11 @@ processing:
             ref: relay.indexable-resources
           indexable-resource-fragments:
             ref: outbox.indexable-resource-fragments
+        environment:
+          QUARKUS_CONFIG_LOCATIONS: "/deployments/config/application.yaml"
         volumesFrom:
           configs:
-            - "indexable-resources-producer.yaml"
+            - "indexable-resources-producer.yaml:/deployments/config/application.yaml"
 
   indexable-resources-sql-transformer:
     descriptor: indexable-resources-sql-transformer
@@ -339,9 +341,11 @@ processing:
         outgoing:
           transformations:
             ref: relay.data
+        environment:
+          QUARKUS_CONFIG_LOCATIONS: "/deployments/config/application.yaml"
         volumesFrom:
           configs:
-            - "indexable-resources-sql-transformer.yaml"
+            - "indexable-resources-sql-transformer.yaml:/deployments/config/application.yaml"
 
   rendering-engine:
     descriptor: rendering-engine
