@@ -48,3 +48,12 @@ streamx:
               element-selector: "//*[local-name()='meta'][@property='author']"
               key: author
               value-selector: "./@content"
+
+            no-index:
+              no-index: true
+              facet: false
+              element-selector: "//*[local-name()='meta'][@name='robots' and contains(concat(',', translate(@content, ' ', ''), ','), ',noindex,')]"
+              key: robots
+              value: noindex
+
+
