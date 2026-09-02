@@ -6,11 +6,11 @@ global:
       rest-ingestion:
         replicas: 1
     processing:
+      indexable-resources-sql-transformer:
+        stateful: true
       rendering-engine:
         stateful: true
       resource-downloader:
-        stateful: true
-      indexable-resources-sql-transformer:
         stateful: true
     edge:
       opensearch-sink:
