@@ -1,6 +1,24 @@
 ---
 domains: []
 global:
+  services:
+    ingestion:
+      rest-ingestion:
+        replicas: 1
+    processing:
+      rendering-engine:
+        stateful: true
+      resource-downloader:
+        stateful: true
+      indexable-resources-sql-transformer:
+        stateful: true
+    edge:
+      opensearch-sink:
+        replicas: 1
+        stateful: true
+      web-server-sink:
+        replicas: 1
+        stateful: true
   properties: {}
 clusters:
   eu-central-waw-edge:
