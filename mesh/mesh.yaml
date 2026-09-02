@@ -262,7 +262,7 @@ processing:
             ref: relay.indexable-resources
         outgoing:
           relayed-events:
-            ref: outbox..indexable-resources
+            ref: outbox.indexable-resources
 
   download-requests-relay:
     descriptor: relay
