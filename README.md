@@ -86,14 +86,14 @@ The following configuration values are required for the renderer:
 
 ### Configuration
 
-| Variable | Description                                                                                         |
-|---|-----------------------------------------------------------------------------------------------------|
-| `rendererKey` | Path to the template used to render the output.                                                     |
-| `dataKeyMatchPattern` | Pattern used to match the data that should be passed to the renderer. Transformation name           |
+| Variable               | Description                                                                                         |
+|------------------------|-----------------------------------------------------------------------------------------------------|
+| `rendererKey`          | Path to the template used to render the output.                                                     |
+| `dataKeyMatchPattern`  | Pattern used to match the data that should be passed to the renderer. Transformation name           |
 | `dataTypeMatchPattern` | Optional pattern used to match the data type. Set to `null` when no data type matching is required. |
-| `outputKeyTemplate` | Path where the generated output will be available.                                                  |
-| `outputTypeTemplate` | Type of the generated output. Leave as it is.                                                       |
-| `outputFormat` | Format of the generated output. Leave as it is.                                                     |
+| `outputKeyTemplate`    | Path where the generated output will be available.                                                  |
+| `outputTypeTemplate`   | Type of the generated output. Leave as it is.                                                       |
+| `outputFormat`         | Format of the generated output. Leave as it is.                                                     |
 
 Contexts are located in:
 
@@ -131,6 +131,15 @@ to view the whole site.
 
 Sample feeds are available at:
 http://edge.127.0.0.1.nip.io/latest-articles.xml
+
+# Search UI
+
+This demo's search component and pages are built with the [`@streamx-hub/search`](https://cdn.jsdelivr.net/npm/@streamx-hub/search) library (`streamx-search-ui`).
+
+The library is configured with custom renderers to fit this demo's markup and design rather than using its default result/suggestion templates:
+
+- `renderers["item-page/eds"]` (in `utils.js`) — custom renderer for search result cards.
+- `renderers.suggestionItem` (in `utils.js`) — custom renderer for inline search suggestion items, used for both the suggestion dropdown markup and, via `suggestionItemSubmitValue`, for extracting the submitted value when a suggestion is selected.
 
 # How to add new FEED
 

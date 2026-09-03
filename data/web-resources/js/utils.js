@@ -1,3 +1,5 @@
+import { getHitUrl } from "@streamx-hub/search/search-inline";
+
 function html(
     strings,
     ...values
@@ -71,4 +73,48 @@ export const renderers = {
     },
 };
 
+function sanitizeSuggestionContent(content) {
+    const raw = Array.isArray(content) ? content.join(" ") : content;
+
+    return (raw ?? "")
+        .replace(/\s+/g, " ")
+        .trim();
+}
+
+export const suggestionItem = (item) => {
+    const { title } = item._source.payload ?? {};
+    const content = item.highlight?.["payload.content"];
+
+    return html`
+        <a href="${getHitUrl(item)}" class="stx-suggestion__item custom-suggestion-item-render">
+          <span class="custom-suggestion-item-render__title">${title ?? ""}</span>
+          <span class="custom-suggestion-item-render__content">${sanitizeSuggestionContent(content)}</span>
+        </a>
+      `;
+};
+
+export const suggestionItemSubmitValue = (item) => {
+    return item.querySelector(".custom-suggestion-item-render__title").textContent;
+};
+
 export const BASE_SEARCH_URL =  "/search";
+
+export const SEARCH_QUERY_PARM = "query";
+
+export const facetFields = [
+    "architecture",
+    "audience",
+    "automation",
+    "benefit",
+    "business",
+    "capability",
+    "category",
+    "content",
+    "data",
+    "feature",
+    "operations",
+    "scalability",
+    "technology",
+    "topic",
+    "use-case",
+];

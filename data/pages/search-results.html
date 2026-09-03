@@ -5,48 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="nofollow, noindex">
   <title>Search results | Static AEM-style site</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@streamx-hub/search@1.0.1/dist/streamx-search.css">
-  <link rel="stylesheet" href="web-resources/css/styles.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@streamx-hub/search@1.2.0/dist/streamx-search.css">
+  <link rel="stylesheet" href="web-resources/css/site.css">
 </head>
-<body>
+<body class="appear">
 <header>
-  <div class="header-inner">
-    <a class="logo" href="index.html">Streamx<span>·</span>Demo</a>
-    <button class="menu-button" aria-label="Toggle navigation">Menu</button>
-    <nav aria-label="Main navigation"><a href="index.html" class="nav-link">Home</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="features.html" class="nav-link">Features</a>
-      <a href="blocks.html" class="nav-link">Blocks</a>
-      <a href="performance.html" class="nav-link">Performance</a>
-      <a href="accessibility.html" class="nav-link">Accessibility</a>
-      <a href="documentation.html" class="nav-link">Documentation</a>
-      <a href="resources.html" class="nav-link">Resources</a>
-      <a href="faq.html" class="nav-link">FAQ</a></nav>
-    <div class="search">
-      <input id="site-search" type="search" placeholder="Search pages…" aria-label="Search pages">
-      <div id="search-results" class="search-results"></div>
-    </div>
+  <div class="nav-wrapper">
+    <nav id="nav" aria-expanded="false">
+      <div class="nav-brand"><p><a href="index.html">StreamX Demo</a></p></div>
+      <div class="nav-sections">
+        <div class="default-content-wrapper">
+          <ul>
+            <li><a href="hero.html">Hero</a></li>
+            <li><a href="columns.html">Columns</a></li>
+            <li><a href="cards.html">Cards</a></li>
+            <li class="active"><a href="buttons.html">Buttons</a></li>
+            <li><a href="headings.html">Headings</a></li>
+            <li><a href="images.html">Images</a></li>
+            <li><a href="lists.html">Lists</a></li>
+            <li><a href="text.html">Text</a></li>
+            <li><a href="sections.html">Sections</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav-tools">
+        <div class="search">
+          <input id="site-search" type="search" placeholder="Search pages…" aria-label="Search pages">
+          <div id="search-results" class="search-results"></div>
+        </div>
+      </div>
+    </nav>
   </div>
 </header>
 <main>
-
+  <div class="section hero-container">
+    <div class="hero-wrapper">
+      <div class="hero block" data-block-name="hero" data-block-status="loaded">
+        <div>
+          <div>
+            <p>
+              <picture><img loading="lazy" alt="Yellow Double Helix"
+                            src="assets/media_1729f1ee89b0906b7c66c98c778581dae957f641c.png">
+              </picture>
+            </p>
+            <h1>Search results</h1></div>
+        </div>
+      </div>
+    </div>
+  </div>
   <section class="section">
     <div class="container">
-      <h2>Search results</h2>
       <div id="search-results-list"></div>
     </div>
   </section>
 
 </main>
 <footer>
-  <div class="container">Static HTML demo · 10 pages · Works locally without a server</div>
+  <div class="footer" data-block-status="loaded">
+    <div>
+      <p>Copyright &copy; 2021 Adobe. All rights reserved.</p>
+      <p><a href="#">Privacy</a> / <a href="#">Terms of Use</a> / <a href="#">Cookie preferences</a>
+        / <a href="#">Do not sell my personal information</a> / <a href="#">AdChoices</a></p>
+    </div>
+  </div>
 </footer>
 
 <script type="importmap">
   {
     "imports": {
-      "@streamx-hub/search/search-inline": "https://cdn.jsdelivr.net/npm/@streamx-hub/search@1.0.1/dist/streamx-search-inline.js",
-      "@streamx-hub/search/search-results-panel": "https://cdn.jsdelivr.net/npm/@streamx-hub/search@1.0.1/dist/streamx-search-results-panel.js"
+      "@streamx-hub/search/search-inline": "https://cdn.jsdelivr.net/npm/@streamx-hub/search@1.2.0/dist/streamx-search-inline.js",
+      "@streamx-hub/search/search-results-panel": "https://cdn.jsdelivr.net/npm/@streamx-hub/search@1.2.0/dist/streamx-search-results-panel.js"
     }
   }
 </script>
