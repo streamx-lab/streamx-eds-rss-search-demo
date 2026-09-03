@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cards | AEM Boilerplate</title>
+  <meta name="description"
+        content="A responsive grid of picture-and-text cards for highlights and staff picks.">
+  <link rel="stylesheet" href="web-resources/css/site.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@streamx-hub/search@1.0.1/dist/streamx-search.css">
+  <meta property="author" content="Anna Nowak">
+  <meta property="description"
+        content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. ">
+  <meta property="date" content="2025-07-09">
+  <meta property="modification_date" content="2025-07-10">
+  <meta property="url" content="https://www.streamx.com/">
+  <meta property="facets:category" content="EDS">
+  <meta property="summary" content="It is a summary">
+</head>
+<body class="appear">
+<header>
+  <div class="nav-wrapper">
+    <nav id="nav" aria-expanded="false">
+      <div class="nav-brand"><p><a href="index.html">StreamX Demo</a></p></div>
+      <div class="nav-sections">
+        <div class="default-content-wrapper">
+          <ul>
+            <li><a href="hero.html">Hero</a></li>
+            <li><a href="columns.html">Columns</a></li>
+            <li class="active"><a href="cards.html">Cards</a></li>
+            <li><a href="buttons.html">Buttons</a></li>
+            <li><a href="headings.html">Headings</a></li>
+            <li><a href="images.html">Images</a></li>
+            <li><a href="lists.html">Lists</a></li>
+            <li><a href="text.html">Text</a></li>
+            <li><a href="sections.html">Sections</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav-tools">
+        <div class="search">
+          <input id="site-search" type="search" placeholder="Search pages…" aria-label="Search pages">
+          <div id="search-results" class="search-results"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="section hero-container">
+    <div class="hero-wrapper">
+      <div class="hero block" data-block-name="hero" data-block-status="loaded">
+        <div>
+          <div>
+            <p>
+              <picture><img loading="lazy" alt="Yellow Double Helix"
+                            src="assets/media_1729f1ee89b0906b7c66c98c778581dae957f641c.png">
+              </picture>
+            </p>
+            <h1>Cards</h1></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="default-content-wrapper">
+      <p>A responsive grid of picture-and-text cards for highlights and staff picks.</p>
+      <h2>How the cards block behaves</h2>
+      <p>Every block on this page uses the same stylesheet as the AEM Edge Delivery Services
+        boilerplate, so spacing, type scale and colors match one-to-one. The page is plain HTML and
+        can be opened straight from disk.</p>
+    </div>
+  </div>
+  <div class="section columns-container">
+    <div class="columns-wrapper">
+      <div class="columns block columns-2-cols" data-block-name="columns"
+           data-block-status="loaded">
+        <div>
+          <div><p><strong>Cards in two columns</strong></p>
+            <ul>
+              <li>Same 1200px content width</li>
+              <li>Stacks below 900px</li>
+              <li>Images fill their column</li>
+            </ul>
+            <p class="button-wrapper"><a class="button primary" href="index.html">Back home</a></p>
+          </div>
+          <div class="columns-img-col">
+            <picture><img loading="lazy" alt="green double Helix"
+                          src="assets/media_150e62f94d67cc996af043cce3cd8f39ff270d4f8.png">
+            </picture>
+          </div>
+        </div>
+        <div>
+          <div class="columns-img-col">
+            <picture><img loading="lazy" alt="Yellow Double Helix"
+                          src="assets/media_1729f1ee89b0906b7c66c98c778581dae957f641c.png">
+            </picture>
+          </div>
+          <div><p>Text and imagery swap order in the second row, exactly like the boilerplate
+            columns block.</p>
+            <p class="button-wrapper"><a class="button accent" href="buttons.html">Next: Buttons</a>
+            </p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section cards-container light">
+    <div class="default-content-wrapper"><h2>Boilerplate Highlights?</h2>
+      <p>Find some of our favorite staff picks below:</p></div>
+    <div class="cards-wrapper">
+      <div class="cards block" data-block-name="cards" data-block-status="loaded">
+        <ul>
+          <li>
+            <div class="cards-card-image">
+              <picture><img loading="lazy" alt="A fast-moving Tunnel"
+                            src="assets/media_1300083772e9645ea9463e3ff16e3a87fec824b7c.jpg">
+              </picture>
+            </div>
+            <div class="cards-card-body"><p><strong>Unmatched speed</strong></p>
+              <p>AEM is the fastest way to publish, create, and serve websites</p></div>
+          </li>
+          <li>
+            <div class="cards-card-image">
+              <picture><img loading="lazy" alt="An iceberg"
+                            src="assets/media_1a22b50c2d1a3e61cb6b1f4a1ce284a7475caa8bb.jpg">
+              </picture>
+            </div>
+            <div class="cards-card-body"><p><strong>Content at scale</strong></p>
+              <p>AEM allows you to publish more content in shorter time with smaller teams</p></div>
+          </li>
+          <li>
+            <div class="cards-card-image">
+              <picture><img loading="lazy" alt="Doors with light in the dark"
+                            src="assets/media_1896e26305d79be855074187be5fb49665a5190d1.jpg">
+              </picture>
+            </div>
+            <div class="cards-card-body"><p><strong>Uncertainty eliminated</strong></p>
+              <p>Preview content at 100% fidelity, get predictable content velocity, and shorten
+                project durations</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="default-content-wrapper"><p><a href="columns.html">&larr; Columns</a> / <a
+        href="index.html">Home</a> / <a href="buttons.html">Buttons &rarr;</a></p></div>
+  </div>
+</main>
+<footer>
+  <div class="footer" data-block-status="loaded">
+    <div>
+      <p>Copyright &copy; 2021 Adobe. All rights reserved.</p>
+      <p><a href="#">Privacy</a> / <a href="#">Terms of Use</a> / <a href="#">Cookie preferences</a>
+        / <a href="#">Do not sell my personal information</a> / <a href="#">AdChoices</a></p>
+    </div>
+  </div>
+</footer>
+
+<script type="importmap">
+  {
+    "imports": {
+      "@streamx-hub/search/search-inline": "https://cdn.jsdelivr.net/npm/@streamx-hub/search@1.0.1/dist/streamx-search-inline.js"
+    }
+  }
+</script>
+<script type="module" src="web-resources/js/main.js"></script>
+</body>
+</html>

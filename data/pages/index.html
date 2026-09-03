@@ -1,82 +1,262 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home | Static AEM-style site</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@streamx-hub/search@1.0.1/dist/streamx-search.css">
-  <link rel="stylesheet" href="web-resources/css/styles.css">
+  <title>Home | AEM Boilerplate</title>
+  <meta name="description"
+        content="AEM Edge Delivery Services boilerplate, rebuilt as static pages.">
+  <link rel="stylesheet" href="web-resources/css/site.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@streamx-hub/search@1.0.1/dist/streamx-search.css">
   <meta property="author" content="David Beckham">
-  <meta property="description" content="David was a great footballer">
+  <meta property="description"
+        content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. ">
   <meta property="date" content="2025-07-01">
   <meta property="modification_date" content="2025-07-02">
   <meta property="url" content="https://www.streamx.com/">
   <meta property="facets:category" content="AEM">
+  <meta property="summary" content="It is a summary">
 </head>
-<body>
+<body class="appear">
 <header>
-  <div class="header-inner">
-    <a class="logo" href="index.html">Streamx<span>·</span>Demo</a>
-    <button class="menu-button" aria-label="Toggle navigation">Menu</button>
-    <nav aria-label="Main navigation"><a href="index.html" class="nav-link active">Home</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="features.html" class="nav-link">Features</a>
-      <a href="blocks.html" class="nav-link">Blocks</a>
-      <a href="performance.html" class="nav-link">Performance</a>
-      <a href="accessibility.html" class="nav-link">Accessibility</a>
-      <a href="documentation.html" class="nav-link">Documentation</a>
-      <a href="resources.html" class="nav-link">Resources</a>
-      <a href="faq.html" class="nav-link">FAQ</a></nav>
-    <div class="search">
-      <input id="site-search" type="search" placeholder="Search pages…" aria-label="Search pages">
-      <div id="search-results" class="search-results"></div>
-    </div>
+  <div class="nav-wrapper">
+    <nav id="nav" aria-expanded="false">
+      <div class="nav-brand">
+        <p><a href="index.html">StreamX Demo</a></p>
+      </div>
+      <div class="nav-sections">
+        <div class="default-content-wrapper">
+          <ul>
+            <li><a href="hero.html">Hero</a></li>
+            <li><a href="columns.html">Columns</a></li>
+            <li><a href="cards.html">Cards</a></li>
+            <li><a href="buttons.html">Buttons</a></li>
+            <li><a href="headings.html">Headings</a></li>
+            <li><a href="images.html">Images</a></li>
+            <li><a href="lists.html">Lists</a></li>
+            <li><a href="text.html">Text</a></li>
+            <li><a href="sections.html">Sections</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav-tools">
+        <div class="search">
+          <input id="site-search" type="search" placeholder="Search pages…" aria-label="Search pages">
+          <div id="search-results" class="search-results"></div>
+        </div>
+      </div>
+    </nav>
   </div>
 </header>
 <main>
-  <section class="hero">
-    <div class="container">
-      <div class="eyebrow">Home</div>
-      <h1>Streamx demo site</h1>
-      <p>A clean, fast static site built for the Streamx demo. Everything here works without a server.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2>Boilerplate highlights</h2>
-      <div class="grid">
-        <article class="card">
-          <div class="number">01</div>
-          <h3>Unmatched speed</h3>
-          <p>Static assets and a focused layout make the experience quick and predictable.</p>
-        </article>
-        <article class="card">
-          <div class="number">02</div>
-          <h3>Content at scale</h3>
-          <p>Use the same visual system across multiple pages without duplicating CSS.</p></article>
-        <article class="card">
-          <div class="number">03</div>
-          <h3>Low-code simplicity</h3>
-          <p>Everything is plain HTML, CSS and JavaScript, so it can be edited anywhere.</p>
-        </article>
+  <div class="section hero-container">
+    <div class="hero-wrapper">
+      <div class="hero block" data-block-name="hero" data-block-status="loaded">
+        <div>
+          <div>
+            <p>
+              <picture><img loading="lazy" alt="Decorative double Helix"
+                            src="assets/media_1fc3c12c8998c05d1d65a65325fbeab50ac6ca721.jpg">
+              </picture>
+            </p>
+            <h1>Congrats, you are ready to go!</h1>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      <div class="columns">
-        <div><h2>Designed for static delivery</h2></div>
-        <div><p class="lead">The structure follows the clean editorial feel of the referenced AEM
-          EDS boilerplate: generous whitespace, restrained typography, borders, cards and strong
-          content hierarchy.</p></div>
+  </div>
+  <div class="section">
+    <div class="default-content-wrapper">
+      <p>Your forked repo is set up as an AEM Project and you are ready to start developing.<br>The
+        content you are
+        looking at is served from Document Authoring.<br><br><a href="hero.html">Browse the block
+          library</a></p>
+      <h2>This is another headline here for more content</h2>
+    </div>
+  </div>
+  <div class="section columns-container">
+    <div class="columns-wrapper">
+      <div class="columns block columns-2-cols" data-block-name="columns"
+           data-block-status="loaded">
+        <div>
+          <div>
+            <p>Columns block</p>
+            <ul>
+              <li>One</li>
+              <li>Two</li>
+              <li>Three</li>
+            </ul>
+            <p class="button-wrapper"><a class="button primary" href="columns.html">Live</a></p>
+          </div>
+          <div class="columns-img-col">
+            <picture><img loading="lazy" alt="green double Helix"
+                          src="assets/media_150e62f94d67cc996af043cce3cd8f39ff270d4f8.png">
+            </picture>
+          </div>
+        </div>
+        <div>
+          <div class="columns-img-col">
+            <picture><img loading="lazy" alt="Yellow Double Helix"
+                          src="assets/media_1729f1ee89b0906b7c66c98c778581dae957f641c.png">
+            </picture>
+          </div>
+          <div>
+            <p>Or you can just view the preview</p>
+            <p class="button-wrapper"><a class="button secondary" href="cards.html">Preview</a></p>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
-
+  </div>
+  <div class="section cards-container light">
+    <div class="default-content-wrapper">
+      <h2>Boilerplate Highlights?</h2>
+      <p>Find some of our favorite staff picks below:</p>
+    </div>
+    <div class="cards-wrapper">
+      <div class="cards block" data-block-name="cards" data-block-status="loaded">
+        <ul>
+          <li>
+            <div class="cards-card-image">
+              <picture><img loading="lazy" alt="A fast-moving Tunnel"
+                            src="assets/media_1300083772e9645ea9463e3ff16e3a87fec824b7c.jpg">
+              </picture>
+            </div>
+            <div class="cards-card-body">
+              <p><strong>Unmatched speed</strong></p>
+              <p>AEM is the fastest way to publish, create, and serve websites</p>
+            </div>
+          </li>
+          <li>
+            <div class="cards-card-image">
+              <picture><img loading="lazy" alt="An iceberg"
+                            src="assets/media_1a22b50c2d1a3e61cb6b1f4a1ce284a7475caa8bb.jpg">
+              </picture>
+            </div>
+            <div class="cards-card-body">
+              <p><strong>Content at scale</strong></p>
+              <p>AEM allows you to publish more content in shorter time with smaller teams</p>
+            </div>
+          </li>
+          <li>
+            <div class="cards-card-image">
+              <picture><img loading="lazy" alt="Doors with light in the dark"
+                            src="assets/media_1896e26305d79be855074187be5fb49665a5190d1.jpg">
+              </picture>
+            </div>
+            <div class="cards-card-body">
+              <p><strong>Uncertainty eliminated</strong></p>
+              <p>Preview content at 100% fidelity, get predictable content velocity, and shorten
+                project durations</p>
+            </div>
+          </li>
+          <li>
+            <div class="cards-card-image">
+              <picture><img loading="lazy" alt="A group of people around a Table"
+                            src="assets/media_1603e8a5fbbf063145148ad76dc2eecade1abb5d7.jpg">
+              </picture>
+            </div>
+            <div class="cards-card-body">
+              <p><strong>Widen the talent pool</strong></p>
+              <p>Authors on AEM use Microsoft Word, Excel or Google Docs and need no training</p>
+            </div>
+          </li>
+          <li>
+            <div class="cards-card-image">
+              <picture><img loading="lazy" alt="HTML code in a code editor"
+                            src="assets/media_164c78460645750ef2645ce84d681b8ea84957a97.jpg">
+              </picture>
+            </div>
+            <div class="cards-card-body">
+              <p><strong>The low-code way to developer productivity</strong></p>
+              <p>Say goodbye to complex APIs spanning multiple languages. Anyone with a little bit
+                of HTML, CSS, and
+                JS can build a site on AEM.</p>
+            </div>
+          </li>
+          <li>
+            <div class="cards-card-image">
+              <picture><img loading="lazy" alt="A rocket and a headless suit"
+                            src="assets/media_100771fec5bb7bb98fd37a35d6191f9e161044350.jpg">
+              </picture>
+            </div>
+            <div class="cards-card-body">
+              <p><strong>Headless is here</strong></p>
+              <p>Go directly from Microsoft Excel or Google Sheets to the web in mere seconds.
+                Sanitize and collect
+                form data at extreme scale with AEM Forms.</p>
+            </div>
+          </li>
+          <li>
+            <div class="cards-card-image">
+              <picture><img loading="lazy" alt="A dial with a hand on it"
+                            src="assets/media_13c0f03af2cd9ddfe9f889bc0af4cad0c6e0abeb4.jpg">
+              </picture>
+            </div>
+            <div class="cards-card-body">
+              <p><strong>Peak performance</strong></p>
+              <p>Use AEM's serverless architecture to meet any traffic need. Use AEM's PageSpeed
+                Insights Github
+                action to evaluate every Pull-Request for Lighthouse Score.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="default-content-wrapper">
+      <h2>Explore the pages</h2>
+      <ul>
+        <li><a href="hero.html">Hero</a> &mdash; Full-bleed image with the page title on top, the
+          first thing every
+          visitor sees.
+        </li>
+        <li><a href="columns.html">Columns</a> &mdash; Side-by-side text and imagery that reflows
+          into a single column
+          on small screens.
+        </li>
+        <li><a href="cards.html">Cards</a> &mdash; A responsive grid of picture-and-text cards for
+          highlights and
+          staff picks.
+        </li>
+        <li><a href="buttons.html">Buttons</a> &mdash; Primary, secondary and accent call-to-action
+          styles built from
+          plain links.
+        </li>
+        <li><a href="headings.html">Headings</a> &mdash; The condensed heading scale from h1 down to
+          h6, tuned for
+          desktop and mobile.
+        </li>
+        <li><a href="images.html">Images</a> &mdash; Responsive pictures that never overflow their
+          section and keep
+          their ratio.
+        </li>
+        <li><a href="lists.html">Lists</a> &mdash; Ordered and unordered lists with the default
+          content spacing
+          rhythm.
+        </li>
+        <li><a href="text.html">Text</a> &mdash; Body copy, links and quotes at the boilerplate
+          reading size.
+        </li>
+        <li><a href="sections.html">Sections</a> &mdash; Light and default sections that structure a
+          page top to
+          bottom.
+        </li>
+      </ul>
+    </div>
+  </div>
 </main>
 <footer>
-  <div class="container">Static HTML demo · 10 pages · Works locally without a server</div>
+  <div class="footer" data-block-status="loaded">
+    <div>
+      <p>Copyright &copy; 2021 Adobe. All rights reserved.</p>
+      <p><a href="#">Privacy</a> / <a href="#">Terms of Use</a> / <a href="#">Cookie preferences</a>
+        / <a href="#">Do
+          not sell my personal information</a> / <a href="#">AdChoices</a></p>
+    </div>
+  </div>
 </footer>
 
 <script type="importmap">
