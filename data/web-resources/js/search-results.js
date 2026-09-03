@@ -1,5 +1,12 @@
 import { createResultsPanel } from "@streamx-hub/search/search-results-panel";
-import { BASE_SEARCH_URL, facetFields, renderers, SEARCH_QUERY_PARM } from "./utils.js";
+import {
+    BASE_SEARCH_URL,
+    facetFields,
+    renderers,
+    SEARCH_QUERY_PARM,
+    suggestionItem,
+    suggestionItemSubmitValue
+} from "./utils.js";
 
 const searchPage = createResultsPanel(
     {
@@ -8,6 +15,8 @@ const searchPage = createResultsPanel(
         searchPageUrl: (query) =>
             `/search-results.html?${SEARCH_QUERY_PARM}=${encodeURIComponent(query)}`,
         submitInPlace: true,
+        renderers: { suggestionItem },
+        suggestionItemSubmitValue,
     },
     {
         dataSources: [`${BASE_SEARCH_URL}/query/body`],

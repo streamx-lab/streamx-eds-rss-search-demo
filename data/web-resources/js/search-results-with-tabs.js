@@ -1,5 +1,12 @@
 import { createSearchTabs } from "@streamx-hub/search/search-tabs";
-import { BASE_SEARCH_URL, facetFields, renderers, SEARCH_QUERY_PARM } from "./utils.js";
+import {
+    BASE_SEARCH_URL,
+    facetFields,
+    renderers,
+    SEARCH_QUERY_PARM,
+    suggestionItem,
+    suggestionItemSubmitValue
+} from "./utils.js";
 
 const searchTabs = createSearchTabs(
     {
@@ -8,6 +15,8 @@ const searchTabs = createSearchTabs(
         searchPageUrl: (query) =>
             `/search-results.html?${SEARCH_QUERY_PARM}=${encodeURIComponent(query)}`,
         submitInPlace: true,
+        renderers: { suggestionItem },
+        suggestionItemSubmitValue,
     },
     [
         {
