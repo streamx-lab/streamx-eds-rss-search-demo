@@ -72,3 +72,23 @@ export const renderers = {
 };
 
 export const BASE_SEARCH_URL =  "/search";
+
+export const SEARCH_QUERY_PARM = "query";
+
+export const facetFields = [
+    "architecture",
+    "audience",
+    "automation",
+    "benefit",
+    "business",
+    "capability",
+    "category",
+    "content",
+    "data",
+    "feature",
+    "operations",
+    "scalability",
+    "technology",
+    "topic",
+    "use-case",
+];

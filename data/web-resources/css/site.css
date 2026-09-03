@@ -791,3 +791,7 @@ footer .footer p {
   margin: 0;
   color: var(--dark);
 }
+
+a.stx-suggestion__item {
+  color: currentColor;
+}

@@ -1,12 +1,13 @@
 import { createSearchTabs } from "@streamx-hub/search/search-tabs";
-import {BASE_SEARCH_URL, renderers} from "./utils.js";
+import { BASE_SEARCH_URL, facetFields, renderers, SEARCH_QUERY_PARM } from "./utils.js";
 
 const searchTabs = createSearchTabs(
     {
         showSearchButton: false,
         searchApiUrl: `${BASE_SEARCH_URL}/pages`,
-        queryParam: "stx-search",
-        searchPageUrl: (query) => `/search?stx-search=${encodeURIComponent(query)}`,
+        searchPageUrl: (query) =>
+            `/search-results.html?${SEARCH_QUERY_PARM}=${encodeURIComponent(query)}`,
+        submitInPlace: true,
     },
     [
         {
@@ -17,8 +18,7 @@ const searchTabs = createSearchTabs(
                 method: "POST",
                 requestId: "eds-pages",
                 pageSize: 20,
-                facetFields: ["category"],
-                queryParam: "stx-search",
+                facetFields,
                 renderers,
             },
         },
@@ -30,8 +30,7 @@ const searchTabs = createSearchTabs(
                 method: "POST",
                 requestId: "eds-pages",
                 pageSize: 20,
-                facetFields: ["category"],
-                queryParam: "stx-search",
+                facetFields,
                 renderers,
             },
         },
