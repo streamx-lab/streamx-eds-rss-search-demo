@@ -26,5 +26,5 @@ clusters:
     enabled: true
     overlay: {}
   us-west-lax-edge:
-    enabled: false
+    enabled: true
     overlay: {}
