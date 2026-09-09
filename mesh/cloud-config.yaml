@@ -27,5 +27,3 @@ clusters:
       properties: {}
   eu-west-par-processing:
     enabled: true
-    overlays:
-      properties: {}
