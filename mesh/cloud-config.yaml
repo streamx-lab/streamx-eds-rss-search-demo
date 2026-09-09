@@ -23,7 +23,7 @@ global:
 clusters:
   eu-central-waw-edge:
     enabled: true
-    overlays:
-      properties: {}
   eu-west-par-processing:
+    enabled: true
+  us-west-lax-edge:
     enabled: true
