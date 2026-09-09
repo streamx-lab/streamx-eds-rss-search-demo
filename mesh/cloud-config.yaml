@@ -1,5 +1,4 @@
 ---
-domains: []
 global:
   services:
     ingestion:
@@ -19,11 +18,13 @@ global:
       web-server-sink:
         replicas: 1
         stateful: true
-  properties: {}
 clusters:
   eu-central-waw-edge:
     enabled: true
+    overlay: {}
   eu-west-par-processing:
     enabled: true
+    overlay: {}
   us-west-lax-edge:
-    enabled: true
+    enabled: false
+    overlay: {}
