@@ -87,6 +87,9 @@ var parseFacetFields = (value) => {
 	const roots = (value ?? "").split(",").map((root) => root.trim()).filter(Boolean);
 	return roots.length > 0 ? roots : void 0;
 };
+function parseBooleanField(value) {
+	return value?.trim().toLowerCase() === "true";
+}
 /** Maps authored EDS rows to a results-panel config. Single source of truth. */
 var readPanelOptions = (config) => ({
 	pageSize: Number(config.pageSize) || 10,
@@ -97,7 +100,7 @@ var readPanelOptions = (config) => ({
 	facetFields: parseFacetFields(config.facetFields),
 	facetPathSeparator: config.facetPathSeparator || void 0,
 	facetFieldSize: Number(config.facetFieldSize) || void 0,
-	debugMode: config.debugMode === void 0 ? void 0 : config.debugMode.trim().toLowerCase() === "true",
+	debugMode: config.debugMode === void 0 ? void 0 : parseBooleanField(config.debugMode),
 	namespace: config.namespace || void 0,
 	labels: generatePanelLabels(config),
 	sortParam: config.sortParam || "sort-by",
@@ -125,10 +128,13 @@ var readInputOptions = (config) => {
 			inputLabel: config.inputLabel,
 			clearButtonAria: config.clearButtonAria,
 			searchButtonAria: config.searchButtonAria
-		}
+		},
+		groupByCategory: config.groupByCategory ? parseBooleanField(config.groupByCategory) : void 0,
+		showSearchButton: config.showSearchButton ? parseBooleanField(config.showSearchButton) : void 0,
+		suggestionsAsLinks: config.suggestionsAsLinks ? parseBooleanField(config.suggestionsAsLinks) : void 0
 	};
 };
 //#endregion
 export { readPanelOptions as a, readInputOptions as i, loadCssFile as n, replaceElWithError as o, mergeEDSConfigs as r, resolveStylesheetHref as s, getEDSConfig as t };
 
-//# sourceMappingURL=eds-helper-BNkMKYRc.js.map
+//# sourceMappingURL=eds-helper-BTxFq5sA.js.map

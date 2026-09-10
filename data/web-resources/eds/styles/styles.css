@@ -38,6 +38,8 @@
 
     /* nav height */
     --nav-height: 64px;
+
+    --stx-z-query-input: 1;
 }
 
 /* fallback fonts */

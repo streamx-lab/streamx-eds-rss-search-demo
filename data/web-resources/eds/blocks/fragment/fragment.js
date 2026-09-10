@@ -20,7 +20,7 @@ import {
  */
 export async function loadFragment(path) {
   if (path && path.startsWith('/') && !path.startsWith('//')) {
-    const resp = await fetch(`http://localhost:8084/web-resources/eds/fragments/${path}.plain.html`);
+    const resp = await fetch(`/web-resources/eds/fragments/${path}.plain.html`);
     if (resp.ok) {
       const main = document.createElement('main');
       main.innerHTML = await resp.text();

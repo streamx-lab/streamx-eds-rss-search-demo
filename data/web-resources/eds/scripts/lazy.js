@@ -2,18 +2,18 @@ import { sampleRUM } from './aem.js';
 
 async function loadInlineSearch() {
     const { createSearchInput } = await import('./search/streamx-search-inline.js');
-    const navSearchInput = document.querySelector('.nav-search-input');
+    const navSearchMount = document.querySelector('.nav-search-mount');
 
-    if (!navSearchInput) {
+    if (!navSearchMount) {
         // eslint-disable-next-line no-console
-        console.error('nav search input field is not defined!');
+        console.error('nav search mount point is not defined!');
         return;
     }
 
     // Authored config from the nav's `search-config` block (stashed by header.js).
     let authored = {};
     try {
-        authored = JSON.parse(navSearchInput.dataset.searchConfig || '{}');
+        authored = JSON.parse(navSearchMount.dataset.searchConfig || '{}');
     } catch (error) {
         // eslint-disable-next-line no-console
         console.error('Could not parse authored nav search config', error);
@@ -29,7 +29,6 @@ async function loadInlineSearch() {
 
     const queryParam = authored.queryParam || 'query';
     const streamxSearchInput = createSearchInput({
-        searchOpenElementSelector: '',
         searchApiUrl: authored.searchApiUrl,
         searchPageUrl: authored.searchPageUrl
             ? (query) => `${authored.searchPageUrl}?${queryParam}=${encodeURIComponent(query)}`
@@ -45,7 +44,8 @@ async function loadInlineSearch() {
             clearButtonAria: authored.clearButtonAria || undefined,
             searchButtonAria: authored.searchButtonAria || undefined,
         },
-    }, navSearchInput);
+        suggestionsAsLinks: true,
+    }, navSearchMount);
 
     const searchInputEl = streamxSearchInput.querySelector('input');
     searchInputEl.classList.add('nav-search-input');

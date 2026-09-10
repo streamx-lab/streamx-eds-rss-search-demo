@@ -1,5 +1,5 @@
 import { t as createResultsPanel } from "../search-results-panel-DLJ5VIsj.js";
-import { a as readPanelOptions, i as readInputOptions, n as loadCssFile, o as replaceElWithError, s as resolveStylesheetHref, t as getEDSConfig } from "../eds-helper-BNkMKYRc.js";
+import { a as readPanelOptions, i as readInputOptions, n as loadCssFile, o as replaceElWithError, s as resolveStylesheetHref, t as getEDSConfig } from "../eds-helper-BTxFq5sA.js";
 //#region src/exports/eds/decorate-results-panel.ts
 function decorate(block, renderers) {
 	loadCssFile(resolveStylesheetHref(import.meta.url));

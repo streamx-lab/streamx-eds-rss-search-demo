@@ -163,7 +163,7 @@ function setup(importUrl = import.meta.url) {
     window.hlx.RUM_MANUAL_ENHANCE = true;
     window.hlx.lighthouse = new URLSearchParams(window.location.search).get('lighthouse') === 'on';
 
-    window.hlx.codeBasePath = 'http://localhost:8084/web-resources/eds';
+    window.hlx.codeBasePath = '/web-resources/eds';
 }
 
 /**

@@ -1,5 +1,5 @@
 import { t as createSearchTabs } from "../search-tabs-Bi7eAnxP.js";
-import { a as readPanelOptions, i as readInputOptions, n as loadCssFile, o as replaceElWithError, r as mergeEDSConfigs, s as resolveStylesheetHref, t as getEDSConfig } from "../eds-helper-BNkMKYRc.js";
+import { a as readPanelOptions, i as readInputOptions, n as loadCssFile, o as replaceElWithError, r as mergeEDSConfigs, s as resolveStylesheetHref, t as getEDSConfig } from "../eds-helper-BTxFq5sA.js";
 //#region src/exports/eds/decorate-search-tabs.ts
 function decorate(block, tabSelector, renderers) {
 	loadCssFile(resolveStylesheetHref(import.meta.url));
