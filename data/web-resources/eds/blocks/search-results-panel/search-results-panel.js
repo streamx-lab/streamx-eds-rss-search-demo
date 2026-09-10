@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import decorateResultsPanel from '../../scripts/search/eds/search-results-panel.js';
+import { getHitUrl } from '../../scripts/search/streamx-search-results-panel.js';
 
 function html(
     strings,
@@ -53,6 +54,26 @@ function html(
   return children.length === 1 ? children[0] : children;
 }
 
+function sanitizeSuggestionContent(content) {
+  const raw = Array.isArray(content) ? content.join(" ") : content;
+
+  return (raw ?? "")
+      .replace(/\s+/g, " ")
+      .trim();
+}
+
+export const suggestionItem = (item) => {
+  const { title } = item._source.payload ?? {};
+  const content = item.highlight?.["payload.content"];
+
+  return html`
+        <a href="${getHitUrl(item)}" class="stx-suggestion__item custom-suggestion-item-render">
+          <span class="custom-suggestion-item-render__title">${title ?? ""}</span>
+          <span class="custom-suggestion-item-render__content">${sanitizeSuggestionContent(content)}</span>
+        </a>
+      `;
+};
+
 export const renderers = {
   "item-page/eds": (item) => {
     const { title, fields } = item._source.payload;
@@ -72,9 +93,17 @@ export const renderers = {
         </article>
       `;
   },
-  searchIcon: () => null,
+  suggestionItem,
+};
+
+const callbacks = {
+  suggestionItemSubmitValue: (item) => {
+    const suggestionElement = item.closest(".custom-suggestion-item-render") ?? item;
+
+    return suggestionElement.querySelector(".custom-suggestion-item-render__title")?.textContent ?? "";
+  },
 };
 
 export default function decorate(block) {
-  decorateResultsPanel(block, renderers);
+  decorateResultsPanel(block, renderers, callbacks);
 }
