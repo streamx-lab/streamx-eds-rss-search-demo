@@ -13,7 +13,7 @@ const searchTabs = createSearchTabs(
         showSearchButton: false,
         searchApiUrl: `${BASE_SEARCH_URL}/pages`,
         searchPageUrl: (query) =>
-            `/search-results.html?${SEARCH_QUERY_PARM}=${encodeURIComponent(query)}`,
+            `/eds-search-results.html?${SEARCH_QUERY_PARM}=${encodeURIComponent(query)}`,
         submitInPlace: true,
         renderers: { suggestionItem },
         suggestionItemSubmitValue,

@@ -94,7 +94,9 @@ export const suggestionItem = (item) => {
 };
 
 export const suggestionItemSubmitValue = (item) => {
-    return item.querySelector(".custom-suggestion-item-render__title").textContent;
+    const suggestionElement = item.closest(".custom-suggestion-item-render") ?? item;
+
+    return suggestionElement.querySelector(".custom-suggestion-item-render__title")?.textContent ?? "";
 };
 
 export const BASE_SEARCH_URL =  "/search";

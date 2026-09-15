@@ -129,17 +129,21 @@ http://edge.127.0.0.1.nip.io
 
 to view the whole site. 
 
+To visit EDS site please open:
+
+http://edge.127.0.0.1.nip.io/eds-home.html
+
 Sample feeds are available at:
 http://edge.127.0.0.1.nip.io/latest-articles.xml
 
 # Search UI
 
-This demo's search component and pages are built with the [`@streamx-hub/search`](https://cdn.jsdelivr.net/npm/@streamx-hub/search) library (`streamx-search-ui`).
+This demo's search component and pages are built with the [`@streamx-hub/search`](https://cdn.jsdelivr.net/npm/@streamx-hub/search) library (`streamx-search-ui`). The same library powers two different kinds of pages under `/data/pages`, wired up in two different ways:
 
-The library is configured with custom renderers to fit this demo's markup and design rather than using its default result/suggestion templates:
+- **Static pages** — plain HTML/CSS pages (`index.html`, `hero.html`, `columns.html`, `cards.html`, `buttons.html`, `headings.html`, `images.html`, `lists.html`, `text.html`, `sections.html`, `search-results.html`, `search-results-with-tabs.html`). The library is imported and configured directly in plain JS modules.
+- **EDS pages** — `eds-home.html` and `eds-search-results.html`, with EDS (`aem.js`, `scripts.js`, and the `/web-resources/eds/blocks/*` block system). The library is wired up through EDS blocks instead of being called directly from page-level JS, the way a real AEM/EDS author would configure it.
 
-- `renderers["item-page/eds"]` (in `utils.js`) — custom renderer for search result cards.
-- `renderers.suggestionItem` (in `utils.js`) — custom renderer for inline search suggestion items, used for both the suggestion dropdown markup and, via `suggestionItemSubmitValue`, for extracting the submitted value when a suggestion is selected.
+Both integrations use the same custom renderers (search result cards and inline suggestion items) rather than the library's defaults — they're just defined in different files for each integration (see below).
 
 # How to add new FEED
 
