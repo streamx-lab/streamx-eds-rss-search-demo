@@ -28,3 +28,6 @@ clusters:
   us-west-lax-edge:
     enabled: true
     overlay: {}
+  us-east-was-edge:
+    enabled: true
+    overlay: {}
