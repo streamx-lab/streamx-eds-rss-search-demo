@@ -29,5 +29,5 @@ clusters:
     enabled: true
     overlay: {}
   us-east-was-edge:
-    enabled: true
+    enabled: false
     overlay: {}
