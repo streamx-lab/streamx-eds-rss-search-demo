@@ -28,31 +28,31 @@ streamx:
 
             field-description:
               facet: false
-              element-selector: "//*[local-name()='meta'][@property='description']"
+              element-selector: "//*[local-name()='meta'][@name='description']"
               key: description
               value-selector: "./@content"
 
             date:
               facet: false
-              element-selector: "//*[local-name()='meta'][@property='date']"
+              element-selector: "//*[local-name()='meta'][@name='date']"
               key: date
               value-selector: "./@content"
 
             publication-date:
               facet: false
-              element-selector: "//*[local-name()='meta'][@property='publication_date']"
+              element-selector: "//*[local-name()='meta'][@name='publication_date']"
               key: publication_date
               value-selector: "./@content"
 
             modification-date:
               facet: false
-              element-selector: "//*[local-name()='meta'][@property='modification_date']"
+              element-selector: "//*[local-name()='meta'][@name='modification_date']"
               key: modification_date
               value-selector: "./@content"
 
             author:
               facet: false
-              element-selector: "//*[local-name()='meta'][@property='author']"
+              element-selector: "//*[local-name()='meta'][@name='author']"
               key: author
               value-selector: "./@content"
 
