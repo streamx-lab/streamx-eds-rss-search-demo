@@ -20,7 +20,7 @@ global:
         stateful: true
 clusters:
   eu-central-waw-edge:
-    enabled: true
+    enabled: false
     overlay: {}
   eu-west-par-processing:
     enabled: true
@@ -30,4 +30,7 @@ clusters:
     overlay: {}
   us-east-was-edge:
     enabled: false
+    overlay: {}
+  eu-west-par-edge:
+    enabled: true
     overlay: {}
