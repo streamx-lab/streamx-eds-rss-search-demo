@@ -19,9 +19,6 @@ global:
         replicas: 1
         stateful: true
 clusters:
-  eu-central-waw-edge:
-    enabled: false
-    overlay: {}
   eu-west-par-processing:
     enabled: true
     overlay: {}
