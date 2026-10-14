@@ -6,6 +6,7 @@ default:
 descriptors:
   relay:
     type: processing
+    serviceUnits: 0.25
     containers:
       service:
         incoming:
@@ -15,6 +16,7 @@ descriptors:
 
   external-references-rewriter:
     type: processing
+    serviceUnits: 0.25
     containers:
       processor:
         image: ghcr.io/streamx-hub/streamx-blueprints/external-references-rewriter:3.0.27-native
@@ -26,6 +28,7 @@ descriptors:
 
   resource-downloader:
     type: processing
+    serviceUnits: 1.0
     volumes:
       rocksdb:
         size: 5Gi
@@ -43,6 +46,7 @@ descriptors:
 
   indexable-resources-producer:
     type: processing
+    serviceUnits: 0.5
     containers:
       processor:
         image: ghcr.io/streamx-hub/streamx-blueprints/indexable-resources-producer:3.0.27-native
@@ -55,6 +59,7 @@ descriptors:
 
   indexable-resources-sql-transformer:
     type: processing
+    serviceUnits: 1.0
     volumes:
       sqlitedb:
         size: 5Gi
@@ -76,6 +81,7 @@ descriptors:
 
   rendering-engine:
     type: processing
+    serviceUnits: 1.0
     volumes:
       rocksdb:
         size: 5Gi
@@ -107,6 +113,7 @@ descriptors:
 
   opensearch-sink:
     type: edge
+    serviceUnits: 4.0
     volumes:
       opensearch-data:
         size: 20Gi
@@ -143,6 +150,7 @@ descriptors:
 
   web-server-sink:
     type: edge
+    serviceUnits: 1.0
     volumes:
       repository-volume:
         size: 20Gi
